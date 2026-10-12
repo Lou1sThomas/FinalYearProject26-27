@@ -29,7 +29,7 @@ class MainActivity : ComponentActivity() {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     if (loggedIn) {
                         Text(
-                            text = "Welcome! You're logged in.",
+                            text = "Are we playing hide and seek?",
                             modifier = Modifier.padding(innerPadding)
                         )
                     } else {
