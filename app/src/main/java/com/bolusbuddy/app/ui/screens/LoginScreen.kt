@@ -1,4 +1,4 @@
-package com.bolusbuddy.app
+package com.bolusbuddy.app.ui.screens
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
@@ -18,7 +18,7 @@ fun LoginScreen(onLoginSuccess: () -> Unit, modifier: Modifier = Modifier) {
     var errorMessage by remember { mutableStateOf<String?>(null) }
 
     Column(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxSize()
             .padding(24.dp),
         verticalArrangement = Arrangement.Center,
