@@ -135,39 +135,7 @@ private fun ProductPanel(
                     }
                 }
 
-                is ProductLookupResult.Found -> {
-                    Text(
-                        result.name,
-                        style = MaterialTheme.typography.titleLarge,
-                        fontWeight = FontWeight.Bold
-                    )
-                    result.brand?.let {
-                        Text(it, color = MaterialTheme.colorScheme.onSurfaceVariant)
-                    }
-                    Spacer(Modifier.height(12.dp))
-                    HorizontalDivider()
-                    Spacer(Modifier.height(12.dp))
-
-                    NutrientRow("Carbs per 100 g", formatGrams(result.carbsPer100g))
-                    if (result.carbsPerServing != null) {
-                        val label = result.servingSize?.let { "Carbs per serving ($it)" }
-                            ?: "Carbs per serving"
-                        NutrientRow(label, formatGrams(result.carbsPerServing))
-                    }
-                    if (result.carbsPer100g == null && result.carbsPerServing == null) {
-                        Text(
-                            "No carb information for this product. Check the packet.",
-                            color = MaterialTheme.colorScheme.error
-                        )
-                    }
-
-                    Spacer(Modifier.height(8.dp))
-                    Text(
-                        "Data from Open Food Facts. Always check against the packet.",
-                        style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant
-                    )
-                }
+                is ProductLookupResult.Found -> FoundProductContent(result)
 
                 ProductLookupResult.NotFound -> {
                     Text("Product not found", style = MaterialTheme.typography.titleMedium)
