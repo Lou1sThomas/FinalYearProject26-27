@@ -32,6 +32,7 @@ fun MainScreen(onLogout: () -> Unit) {
             composable(BottomTab.Home.route) {
                 HomeScreen(onNavigate = { tab -> tabNavController.navigateToTab(tab) })
             }
+            composable(BottomTab.Scan.route) { ScanScreen() }      // ← new line
             composable(BottomTab.GlucoseCarbs.route) { GlucoseCarbsScreen() }
             composable(BottomTab.Bolus.route) { BolusScreen() }
             composable(BottomTab.Settings.route) { SettingsScreen(onLogout = onLogout) }
