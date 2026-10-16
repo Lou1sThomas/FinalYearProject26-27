@@ -74,3 +74,17 @@ ai_training/dataset/
 
 #Virtual environment
 venv/
+
+# Secrets
+.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Editors / OS
+.vscode/
+.idea/
+/DS_Store
